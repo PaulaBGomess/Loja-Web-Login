@@ -1,0 +1,13 @@
+<div class="conta-usuario">
+    <c:choose>
+        <c:when test="${not empty sessionScope.usuarioLogado}">
+            <span class="saudacao">Olá, <c:out value="${sessionScope.usuarioLogado.nome}"/>!</span>
+            <form action="${pageContext.request.contextPath}/logout" method="post">
+                <button class="btn btn-secundario" type="submit">Sair</button>
+            </form>
+        </c:when>
+        <c:otherwise>
+            <a class="btn btn-primario" href="${pageContext.request.contextPath}/login">Entrar</a>
+        </c:otherwise>
+    </c:choose>
+</div>

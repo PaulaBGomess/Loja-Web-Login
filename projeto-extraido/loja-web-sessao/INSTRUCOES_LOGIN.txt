@@ -1,0 +1,17 @@
+ATIVIDADE: LOGIN COM HTTPSESSION — INTEGRADA AO PROJETO ORIGINAL
+
+A estrutura e o carrinho originais foram preservados.
+
+1) Abra um terminal nesta pasta e execute: mvn clean package
+2) Copie target/loja-web-sessao.war para a pasta webapps do Tomcat 9.
+3) Inicie o Tomcat e acesse http://localhost:8080/loja-web-sessao/
+4) GET /login abre o formulário; POST /login valida credenciais.
+5) Contas didáticas: ana@loja.com / 123456 (Ana Beatriz Santos)
+                    carlos@loja.com / 123456 (Carlos Lima)
+6) O usuário fica na sessão como usuarioLogado.
+7) Logout por POST /logout invalida a sessão e redireciona para a página inicial.
+8) Login inválido usa forward e exibe mensagem dinâmica com EL/JSTL.
+
+IMPORTANTE: As senhas são didáticas, armazenadas em memória; não use em produção.
+O login invalida uma sessão anterior para prevenir fixação de sessão; isso também
+reinicia o carrinho caso o usuário já tivesse itens antes de fazer login.
